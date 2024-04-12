@@ -1,4 +1,3 @@
-import { useState } from "react";
 import logo from "./assets/splash.png";
 import "./App.css";
 
