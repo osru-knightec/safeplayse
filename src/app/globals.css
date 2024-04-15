@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+ @apply p-0 m-0 w-full h-full;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.key-box {
+  @apply p-12 m-4 bg-white rounded-lg w-96 flex-wrap shadow-orange-500 shadow-md border border-orange-500;
+}
