@@ -13,5 +13,5 @@ body {
 }
 
 .key-box {
-  @apply p-12 m-4 bg-white rounded-lg w-96 flex-wrap shadow-orange-500 shadow-md border border-orange-500;
+  @apply p-12 max-md:p-4 h-64 bg-white rounded-lg w-full max-w-md flex-wrap shadow-orange-500 shadow-md border border-orange-500;
 }

@@ -7,6 +7,7 @@ export const runtime = "edge";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://safeplay.se"),
   title: "SafePlay+ - Enkel lekplatsbesiktning, direkt i mobilen",
   description:
     "SafePlay+ är den ultimata appen för att digitalisera och effektivisera lekplatsbesiktningar. Byt ut papper och penna mot en smidig digital lösning och skapa professionella protokoll på nolltid. Prova nu och upptäck hur enkelt det är att säkerställa lekplatsers trygghet och säkerhet! Helt gratis!",
@@ -24,20 +25,7 @@ export const metadata: Metadata = {
   },
   applicationName: "SafePlay+",
   openGraph: {
-    type: "website",
-    locale: "sv_SE",
-    title: "SafePlay+",
-    url: "https://safeplay.se",
-    description:
-      "SafePlay+ är den ultimata appen för att digitalisera och effektivisera lekplatsbesiktningar. Byt ut papper och penna mot en smidig digital lösning och skapa professionella protokoll på nolltid. Prova nu och upptäck hur enkelt det är att säkerställa lekplatsers trygghet och säkerhet! Helt gratis!",
-    images: [
-      {
-        url: "https://safeplay.se/splash.png",
-        width: 1200,
-        height: 630,
-        alt: "SafePlay+ - Enkel lekplatsbesiktning, direkt i mobilen",
-      },
-    ],
+    images: "/splash.png",
   },
   robots: "index,nofollow",
 };

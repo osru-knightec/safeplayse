@@ -7,10 +7,10 @@ export default function Home() {
       <header className="w-full h-24 flex items-center flex-row px-8 border-b-2 border-b-slate-200 bg-white">
         <Image src="/splash.png" alt="SafePlay+" width={200} height={24} />
       </header>
-      <div className="pb-32 px-12">
+      <div className="pb-32 px-12 max-md:px-4">
         <section className="flex flex-row justify-around items-center flex-wrap gap-32 mt-32">
           <div>
-            <h1 className="text-5xl font-semibold">
+            <h1 className="text-5xl font-semibold max-md:text-3xl">
               Enkel lekplatsbesiktning,
               <br />
               direkt i mobilen
@@ -34,7 +34,7 @@ export default function Home() {
             />
           </div>
         </section>
-        <section className="flex flex-row justify-around items-center flex-wrap mt-32">
+        <section className="flex flex-row justify-around items-center flex-wrap mt-32 gap-4">
           <div className="key-box">
             <h2 className="text-3xl font-semibold">Snabbare</h2>
             <hr className="h-[2px] bg-orange-200 my-2" />
@@ -51,7 +51,7 @@ export default function Home() {
             <p>Genom att lägga in ditt företags branding ser dina protokoll snygga, stilrena och proffsiga ut</p>
           </div>
         </section>
-        <section className="mx-auto w-1/2 bg-white rounded-md p-4 mt-40">
+        <section className="key-box mx-auto w-full max-w-md bg-white rounded-md p-4 mt-40">
           <h2 className="text-3xl font-semibold pb-4">Kontakt</h2>
           <p>
             Om du har frågor eller funderingar är du varmt välkommen att kontakta oss på{" "}
