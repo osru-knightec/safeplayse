@@ -13,5 +13,18 @@ body {
 }
 
 .key-box {
-  @apply p-12 max-md:p-4 h-64 bg-white rounded-lg w-full max-w-md flex-wrap shadow-orange-500 shadow-md border border-orange-500;
+  @apply p-12 max-md:p-4 h-64 bg-white rounded-lg max-w-md flex-wrap text-center;
+}
+
+.key-box::before {
+  content: '⭐️ ⭐️ ⭐️ ⭐️ ⭐️';
+  @apply text-3xl mx-auto block text-center pb-4;
+}
+
+.key-box > h2 {
+  @apply text-3xl font-semibold mb-4;
+}
+
+section {
+  @apply pb-32 px-12 max-md:px-4 bg-white;
 }

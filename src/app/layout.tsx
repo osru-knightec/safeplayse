@@ -9,6 +9,8 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   metadataBase: new URL("https://safeplay.se"),
   title: "SafePlay+ - Enkel lekplatsbesiktning, direkt i mobilen",
+  keywords:
+    "lekplats, besiktning, lekplatsbesiktning, safeplay, safeplay+, protokoll, lekplatsprotokoll, säkerhet, trygghet, app, digital, gratis, inspektion, inspection, playground, safety, security, report, free, inspection",
   description:
     "SafePlay+ är den ultimata appen för att digitalisera och effektivisera lekplatsbesiktningar. Byt ut papper och penna mot en smidig digital lösning och skapa professionella protokoll på nolltid. Prova nu och upptäck hur enkelt det är att säkerställa lekplatsers trygghet och säkerhet! Helt gratis!",
   appLinks: {
@@ -28,6 +30,7 @@ export const metadata: Metadata = {
     images: "/splash.png",
   },
   robots: "index,nofollow",
+  assets: ["/favicon.ico", "/splash.png"],
 };
 
 export default function RootLayout({
@@ -40,7 +43,6 @@ export default function RootLayout({
       <Head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <body className={inter.className}>{children}</body>
     </html>
