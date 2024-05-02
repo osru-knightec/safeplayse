@@ -60,7 +60,7 @@ export default function Home() {
               alt=""
               width={1284}
               height={2778}
-              className="border-4 border-gray-700 overflow-hidden rounded-3xl"
+              className="border-4 border-gray-700 overflow-hidden rounded-3xl shadow-inner"
             />
           </div>
           <div className="flex-1 max-w-sm -mx-12 z-20 overflow-hidden">
@@ -69,7 +69,7 @@ export default function Home() {
               alt=""
               width={1284}
               height={2778}
-              className="border-4 border-gray-700 overflow-hidden rounded-3xl"
+              className="border-4 border-gray-700 overflow-hidden rounded-3xl shadow-inner"
             />
           </div>
           <div className="flex-1 max-w-sm z-10 py-4">
@@ -78,7 +78,7 @@ export default function Home() {
               alt=""
               width={1284}
               height={2778}
-              className="border-4 border-gray-700 overflow-hidden rounded-3xl"
+              className="border-4 border-gray-700 overflow-hidden rounded-3xl shadow-inner"
             />
           </div>
         </div>
