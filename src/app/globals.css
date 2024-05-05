@@ -22,7 +22,11 @@ body {
 }
 
 .key-box > h2 {
-  @apply text-3xl font-semibold mb-4;
+  @apply text-3xl font-semibold mb-4 ;
+}
+
+.key-box > p {
+  @apply text-base font-light
 }
 
 section {
