@@ -8,10 +8,12 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/bundle";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { useSpringRef, useTransition, animated } from "@react-spring/web";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen mx-auto flex-col">
+    <main className="flex min-h-screen mx-auto flex-col from-orange-400 to-orange-500 bg-gradient-radial bg-fixed">
       <header className="w-full h-12 lg:h-16 flex flex-row px-8 py-2 shadow bg-white sticky top-0 z-50">
         <div className="flex-1 flex items-start">
           <Image src="/splash.png" alt="SafePlay+" width={1706} height={331} className="object-contain h-full w-auto" />
@@ -22,18 +24,18 @@ export default function Home() {
           </Link>
         </div>
       </header>
-      <section className="mx-0 px-0">
-        <div className="flex flex-row justify-center items-center flex-wrap gap-32 max-lg:gap-8 pt-12 lg:pt-16 from-orange-300 to-orange-500 bg-gradient-to-b p-12">
-          <div className="flex flex-col gap-4">
-            <h1 className="text-5xl font-semibold max-md:text-3xl">
+      <section className="bg-transparent">
+        <div className="flex flex-row flex-wrap gap-12 items-center justify-center">
+          <div className="flex flex-col gap-4 flex-1">
+            <h1 className="text-3xl font-semibold sm:text-4xl md:text-5xl">
               Enkel lekplatsbesiktning,
               <br />
               direkt i mobilen
             </h1>
-            <h3 className="text-xl max-w-md">
+            <h3 className="text-xl">
               Ladda ner appen och börja effektivisera dina besiktningar idag, helt kostnadsfritt!
             </h3>
-            <div className="flex flex-row items-center gap-16">
+            <div className="flex flex-row items-center gap-16 flex-1">
               <a href="https://apps.apple.com/se/app/safeplay/id6445820584" target="_blank">
                 <Image src="/app_store.svg" alt="App Store" height={40} width={200} />
               </a>
@@ -42,12 +44,15 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="">
-            <Image src="/man_by_playground.png" alt="" width={512} height={512} className="rounded-md shadow-md" />
+          <div className="flex-1 min-w-64 w-full max-w-md sm:min-w-96">
+            <Image
+              src="/man_by_playground.png"
+              alt=""
+              width={512}
+              height={512}
+              className="rounded-md shadow-md h-full w-full"
+            />
           </div>
-        </div>
-        <div className="overflow-x-hidden">
-          <div className="w-[120%] -mx-[10%] -mt-12 h-24 rounded-[120%] bg-orange-500 border-b border-gray-400 shadow-md"></div>
         </div>
       </section>
       <section className="flex flex-row justify-center items-center flex-wrap gap-4 hidden">
@@ -68,38 +73,39 @@ export default function Home() {
         </div>
       </section>
       <section>
-        <ScreenCarousel />
+        <div>
+          <ScreenCarousel />
+        </div>
       </section>
-      <section
-        className="from-orange-600 to-orange-400 bg-gradient-radial pt-32 text-gray-900"
-        style={{ boxShadow: "inset 0px 0 10px 3px rgb(0, 0, 0, 0.1)" }}
-      >
-        {/* A quote section with the text: Med den här appen kan jag skapa proffsiga protokoll direkt på plats, spara tid och undvika onödiga dubbelarbete. Nu hinner jag med många fler besiktningar och kan fokusera mer på själva inspektionen och säkerheten för barnen. Det är en game-changer för mig och mitt arbete som besiktningsman!*/}
-
-        <blockquote className="text-xl font-light text-center">
-          <p className="text-3xl font-normal inline">“</p> Med SafePlay+ kan jag skapa proffsiga protokoll direkt på
-          plats, spara tid och undvika onödigt dubbelarbete. Nu hinner jag med många fler besiktningar och kan fokusera
-          mer på själva inspektionen och säkerheten för barnen. Det är en värdefullt verktyg för mig och mitt arbete som
-          besiktningsman! <p className="text-3xl font-normal inline">”</p>
-          <br />
-        </blockquote>
-        <p className="text-center text-xl font-light mt-4">
-          - Robert Rubensson,{" "}
-          <Link href={"https://miljötrygg.se"} target="_blank" className="underline text-blue-900">
-            Miljötrygg AB
-          </Link>
-        </p>
+      <section className="bg-transparent">
+        <div>
+          <blockquote className="text-xl font-light">
+            <p className="text-3xl font-normal inline">“</p> Med SafePlay+ kan jag skapa proffsiga protokoll direkt på
+            plats, spara tid och undvika onödigt dubbelarbete. Nu hinner jag med många fler besiktningar och kan
+            fokusera mer på själva inspektionen och säkerheten för barnen. Det är en värdefullt verktyg för mig och mitt
+            arbete som besiktningsman! <p className="text-3xl font-normal inline">”</p>
+            <br />
+          </blockquote>
+          <p className="text-center text-xl font-light mt-4">
+            - Robert Rubensson,{" "}
+            <Link href={"https://miljötrygg.se"} target="_blank" className="underline text-blue-900">
+              Miljötrygg AB
+            </Link>
+          </p>
+        </div>
       </section>
 
-      <section className="self-center max-w-2xl mt-32" id="kontakt">
-        <h2 className="text-3xl font-semibold pb-4">Kontakt</h2>
-        <p>
-          Om du har frågor eller vill boka ett möte och diskutera hur SafePlay+ kan effektivisera och digitalisera din
-          verksamhet är du varmt välkommen att kontakta oss på{" "}
-          <a href="mailto:oskar@safeplay.se" className="text-orange-500">
-            oskar@safeplay.se
-          </a>
-        </p>
+      <section className="border" id="kontakt">
+        <div>
+          <h2 className="text-3xl font-semibold pb-4">Kontakt</h2>
+          <p>
+            Om du har frågor eller vill boka ett möte och diskutera hur SafePlay+ kan effektivisera och digitalisera din
+            verksamhet är du varmt välkommen att kontakta oss på{" "}
+            <a href="mailto:oskar@safeplay.se" className="text-orange-500">
+              oskar@safeplay.se
+            </a>
+          </p>
+        </div>
       </section>
     </main>
   );
@@ -112,7 +118,11 @@ const ScreenCarousel = () => {
       "Allt i Appen",
       "Från att skapa en ny besiktning till att skicka protokollet till kund, allt sker i appen med några enkla knapptryck!",
     ],
-    ["/screen2.png", "Enkel Design", "Enkel och intuitiv design gör det enkelt att skapa och redigera protokoll!"],
+    [
+      "/screen2.png",
+      "Enkel Design",
+      "Enkel och intuitiv design gör det enkelt att skapa och redigera protokoll så att du kan fokusera på besiktningen!",
+    ],
     [
       "/screen3.png",
       "Smidig",
@@ -121,7 +131,7 @@ const ScreenCarousel = () => {
     [
       "/screen4.png",
       "Proffsiga Protokoll",
-      "Skriv ut dina protokoll som en proffsig och stilren PDF med ditt företags färger och logga på, redo att skickas till kund!",
+      "Skriv ut dina protokoll som en proffsig och stilren PDF med ditt företags färger och logga på!",
     ],
     [
       "/screen5.png",
@@ -141,12 +151,35 @@ const ScreenCarousel = () => {
   ];
   const activeStyle = "";
   const inactiveStyle = "opacity-50 transform scale-90";
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const transRef = useSpringRef();
+  const transitions = useTransition(activeIndex, {
+    ref: transRef,
+    keys: null,
+    from: { opacity: 0, transform: "translate3d(100%,0,0)" },
+    enter: { opacity: 1, transform: "translate3d(0%,0,0)" },
+    leave: { position: "absolute", opacity: 0, transform: "translate3d(-50%,0,0)" },
+  });
+
+  useEffect(() => {
+    transRef.start();
+  }, [activeIndex]);
 
   return (
     <div className="h-full">
+      {transitions((style, i) => {
+        return (
+          <animated.div style={style} className="w-full max-w-screen-lg">
+            <h1 className="text-orange-600 text-3xl font-semibold mb-4 text-center">{images[activeIndex][1]}</h1>
+            <p className="text-base font-extralight mb-4 text-center">{images[activeIndex][2]}</p>
+          </animated.div>
+        );
+      })}
       <Swiper
         style={{ "--swiper-navigation-color": "#EA580C", "--swiper-pagination-color": "#EA580C" } as any}
-        pagination={{ clickable: true, renderBullet: (index, className) => `<span class="${className}"></span>` }}
+        onSlideChange={({ realIndex }) => setActiveIndex(realIndex)}
+        pagination={{ clickable: true }}
         autoplay={{ delay: 7000 }}
         slideToClickedSlide
         spaceBetween={-20}
@@ -167,20 +200,6 @@ const ScreenCarousel = () => {
           <SwiperSlide key={src + i}>
             {({ isActive, isNext, isPrev }) => (
               <div className={`pb-8 transition-all duration-200 ${isActive ? activeStyle : inactiveStyle}`}>
-                <div className="w-screen max-w-screen -translate-x-0 md:-translate-x-1/3 px-8">
-                  <div className="w-full max-w-xl mx-auto">
-                    <h1
-                      className={`text-orange-600 text-3xl font-semibold mb-4 text-center transition-all duration-300 ${isActive ? "opacity-100" : "opacity-0"}`}
-                    >
-                      {title}
-                    </h1>
-                    <p
-                      className={`text-base font-extralight mb-4 text-center transition-all duration-300 ${isActive ? "opacity-100" : "opacity-0"}`}
-                    >
-                      {images[i][2]}
-                    </p>
-                  </div>
-                </div>
                 <Image
                   src={src}
                   alt={title}

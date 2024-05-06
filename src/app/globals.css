@@ -30,5 +30,9 @@ body {
 }
 
 section {
-  @apply pb-32 px-12 max-md:px-4 bg-white;
+  @apply py-32 px-12 bg-white;
+}
+
+section > div {
+  @apply max-w-4xl mx-auto;
 }
