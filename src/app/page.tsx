@@ -14,14 +14,22 @@ import { useSpringRef, useTransition, animated } from "@react-spring/web";
 export default function Home() {
   return (
     <main className="flex min-h-screen mx-auto flex-col from-orange-400 to-orange-500 bg-gradient-radial bg-fixed">
-      <header className="w-full h-12 lg:h-16 flex flex-row px-8 py-2 shadow bg-white sticky top-0 z-50">
-        <div className="flex-1 flex items-start">
-          <Image src="/splash.png" alt="SafePlay+" width={1706} height={331} className="object-contain h-full w-auto" />
-        </div>
-        <div className="flex-1 flex justify-end items-center">
-          <Link href="#kontakt" className="text-xl ml-auto text-orange-500">
-            Kontakt
-          </Link>
+      <header className="w-full shadow bg-white sticky top-0 z-50 px-12">
+        <div className="w-full max-w-4xl flex flex-row mx-auto h-12 lg:h-16 py-2 justify-center">
+          <div className="flex-1 flex items-start">
+            <Image
+              src="/splash.png"
+              alt="SafePlay+"
+              width={1706}
+              height={331}
+              className="object-contain h-full w-auto"
+            />
+          </div>
+          <div className="flex-1 flex justify-end items-center">
+            <Link href="#kontakt" className="text-xl ml-auto text-orange-500">
+              Kontakt
+            </Link>
+          </div>
         </div>
       </header>
       <section className="bg-transparent">
