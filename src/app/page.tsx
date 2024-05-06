@@ -178,9 +178,9 @@ const ScreenCarousel = () => {
     <div className="h-full">
       {transitions((style, i) => {
         return (
-          <animated.div style={style} className="w-full max-w-screen-lg">
-            <h1 className="text-orange-600 text-3xl font-semibold mb-4 text-center">{images[activeIndex][1]}</h1>
-            <p className="text-base font-extralight mb-4 text-center">{images[activeIndex][2]}</p>
+          <animated.div style={style} className="w-full max-w-screen-lg flex flex-col justify-end">
+            <h1 className="text-orange-600 text-3xl font-semibold mb-4 text-center">{images[i][1]}</h1>
+            <p className="text-base font-extralight mb-4 text-center">{images[i][2]}</p>
           </animated.div>
         );
       })}
@@ -188,18 +188,19 @@ const ScreenCarousel = () => {
         style={{ "--swiper-navigation-color": "#EA580C", "--swiper-pagination-color": "#EA580C" } as any}
         onSlideChange={({ realIndex }) => setActiveIndex(realIndex)}
         pagination={{ clickable: true }}
-        autoplay={{ delay: 7000 }}
+        autoplay={{ delay: 7000, disableOnInteraction: true }}
         slideToClickedSlide
         spaceBetween={-20}
-        slidesPerView={1}
+        slidesPerView={1.8}
         slidesPerGroup={1}
         centeredSlides
         breakpoints={{
           768: {
-            slidesPerView: 3,
+            slidesPerView: 2.5,
             spaceBetween: 0,
           },
         }}
+        grabCursor
         loop
         modules={[Navigation, Pagination, Autoplay]}
         className="h-full"
