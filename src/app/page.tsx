@@ -10,6 +10,8 @@ import "swiper/css/bundle";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useSpringRef, useTransition, animated } from "@react-spring/web";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons/faLinkedin";
 
 export default function Home() {
   return (
@@ -29,6 +31,9 @@ export default function Home() {
             <Link href="#kontakt" className="text-xl ml-auto text-orange-500">
               Kontakt
             </Link>
+            <Link href="https://www.linkedin.com/in/oskar-rubensson-b9a422256" target="_blank" className="ml-4">
+              <FontAwesomeIcon icon={faLinkedin} size="2x" color="#0762C8" />
+            </Link>
           </div>
         </div>
       </header>
@@ -41,7 +46,7 @@ export default function Home() {
               direkt i mobilen
             </h1>
             <h3 className="text-xl">
-              Ladda ner appen och börja effektivisera dina besiktningar idag, helt kostnadsfritt!
+              Ladda ner SafePlay+ och börja effektivisera dina besiktningar idag, helt kostnadsfritt!
             </h3>
             <div className="flex flex-row items-center gap-16 flex-1">
               <a href="https://apps.apple.com/se/app/safeplay/id6445820584" target="_blank">
