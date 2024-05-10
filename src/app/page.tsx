@@ -63,7 +63,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="flex flex-row justify-center items-center flex-wrap gap-4 hidden">
+      {/* <section className="flex flex-row justify-center items-center flex-wrap gap-4 hidden">
         <div className="key-box">
           <h2>Snabbare</h2>
           <p>När du lämnar lekplatsen har du ett färdigt och snyggt protokoll som är redo att skickas till kund!</p>
@@ -79,7 +79,7 @@ export default function Home() {
           <h2>Proffsigare</h2>
           <p>Genom att lägga in ditt företags branding ser dina protokoll snygga, stilrena och proffsiga ut!</p>
         </div>
-      </section>
+      </section> */}
       <section>
         <div>
           <ScreenCarousel />
@@ -87,11 +87,11 @@ export default function Home() {
       </section>
       <section className="bg-transparent">
         <div>
+          <p className="text-5xl font-normal text-center">“</p>
           <blockquote className="text-xl font-light">
-            <p className="text-3xl font-normal inline">“</p> Med SafePlay+ kan jag skapa proffsiga protokoll direkt på
-            plats, spara tid och undvika onödigt dubbelarbete. Nu hinner jag med många fler besiktningar och kan
-            fokusera mer på själva inspektionen och säkerheten för barnen. Det är en värdefullt verktyg för mig och mitt
-            arbete som besiktningsman! <p className="text-3xl font-normal inline">”</p>
+            Med SafePlay+ kan jag skapa proffsiga protokoll direkt på plats, spara tid och undvika onödigt dubbelarbete.
+            Nu hinner jag med många fler besiktningar och kan fokusera mer på själva inspektionen och säkerheten för
+            barnen. Det är en värdefullt verktyg för mig och mitt arbete som besiktningsman!
             <br />
           </blockquote>
           <p className="text-center text-xl font-light mt-4">
@@ -124,7 +124,7 @@ const ScreenCarousel = () => {
     [
       "/screen1.png",
       "Allt i Appen",
-      "Från att skapa en ny besiktning till att skicka protokollet till kund, allt sker i appen med några enkla knapptryck!",
+      "Från att skapa en ny besiktning till att skicka protokollet i PDF-format till kund, allt sker i appen med några enkla knapptryck!",
     ],
     [
       "/screen2.png",
