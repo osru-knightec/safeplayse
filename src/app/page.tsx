@@ -31,7 +31,7 @@ export default function Home() {
             <Link href="#kontakt" className="text-xl ml-auto text-orange-500">
               Kontakt
             </Link>
-            <Link href="https://www.linkedin.com/in/oskar-rubensson-b9a422256" target="_blank" className="ml-4">
+            <Link href="https://www.linkedin.com/company/safeplayplus" target="_blank" className="ml-4">
               <FontAwesomeIcon icon={faLinkedin} size="2x" color="#0762C8" />
             </Link>
           </div>
